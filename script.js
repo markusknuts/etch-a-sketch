@@ -1,5 +1,4 @@
-const divContainer = document.querySelector(".container")
-const divs = document.querySelector('.column')
+const divContainer = document.querySelector(".container")   
 
 createGrid();
 
