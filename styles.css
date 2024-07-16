@@ -1,23 +1,80 @@
-.container {
-    height: 500px;
-    width: 500px;
-    display: flex; 
-    flex-direction: column;
-    border: 5px, solid, black;
+
+*{
+    box-sizing: border-box;
 }
 
-.row {
+:root{
+    --grid-cols:1;
+    --grid-rows:1;
+    
+}
+
+body{
+    background: blue;
+}
+
+#wrapper{
     display: flex;
-    flex: 1;
-    border: 1px, solid, black;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
 }
 
-.column {
-    display: flex;
-    flex: 1;
-    border: 1px, solid, black;
+#button{
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border-style:solid;
+    cursor: pointer;
 }
 
-.hoverd {
-    background-color: blue;
+.grid-container{
+    display: grid;
+    width: 400px;
+    height: 400px;
+    grid-template-rows: repeat(var(--grid-rows),1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);  
+    background: white;
+    border: 1px solid black;
+}
+
+.grid-item{
+    border: 1px solid black;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid-container{
+        display: grid;
+        width: 300px;
+        height: 300px;
+        grid-template-rows: repeat(var(--grid-rows),1fr);
+        grid-template-columns: repeat(var(--grid-cols), 1fr);  
+        border: 1px solid blue;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    #wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid-container{
+        display: grid;
+        width: 300px;
+        height: 300px;
+        grid-template-rows: repeat(var(--grid-rows),1fr);
+        grid-template-columns: repeat(var(--grid-cols), 1fr);  
+        border: 1px solid blue;
+    }
 }
